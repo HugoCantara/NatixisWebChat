@@ -1,6 +1,8 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using NatixisWebChatInfrastructure.Context;
 using NatixisWebChatInfrastructure.Repositories;
 using NatixisWebChatInfrastructure.Repositories.Interfaces;
+using NatixisWebChatInfrastructure.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +14,18 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddScoped<IBaseRepository, BaseRepository>();
 builder.Services.AddScoped<IUsersRepository, UsersRepository>();
 builder.Services.AddScoped<IGroupsRepository, GroupsRepository>();
+builder.Services.AddScoped<PasswordServices>();
+builder.Services.AddScoped<AuthenticationServices>();
 
 builder.Services.AddDbContext<NatixisDbContext>();
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(options =>
+    {
+        options.LoginPath = "/Home/Index";
+        options.Cookie.Name = "LoginCookie";
+        options.ExpireTimeSpan = TimeSpan.FromHours(24);
+    });
 
 var app = builder.Build();
 
@@ -30,7 +42,9 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
 app.UseAuthorization();
+app.UseCookiePolicy();
 
 app.MapControllerRoute(
     name: "default",
