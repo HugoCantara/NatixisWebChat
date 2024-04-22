@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xOZRnvrcsjrSOGn9HPcqNpGqPeDmQu3LctB01xByYLvp4OQdXSDOi4H9W29YLlqZuk9HY30D9kIoKV9S53iJIg==",
+  "dgSpecHash": "6lr0svSu+KS606bOViIKVYl1TsR98qrZbcyuBRDBFMDaf1a7dLsqTPWYP3AekHCI/dO8eT9uclyV8wbzQWWaxg==",
   "success": true,
   "projectFilePath": "D:\\003 - Projectos\\NatixisWebChat\\NatixisWebChat\\NatixisWebChatUI\\NatixisWebChatUI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Hugo Cântara\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Hugo Cântara\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Hugo Cântara\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\Hugo Cântara\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

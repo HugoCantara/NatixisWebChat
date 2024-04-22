@@ -15,3 +15,5 @@ D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatInfrastructure\ob
 D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatInfrastructure\obj\Debug\net6.0\NatixisWebChatInfrastructure.pdb
 D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatInfrastructure\obj\Debug\net6.0\NatixisWebChatInfrastructure.genruntimeconfig.cache
 D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatInfrastructure\obj\Debug\net6.0\ref\NatixisWebChatInfrastructure.dll
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatInfrastructure\bin\Debug\net6.0\NatixisWebChatModels.dll
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatInfrastructure\bin\Debug\net6.0\NatixisWebChatModels.pdb
