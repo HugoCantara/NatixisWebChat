@@ -5,6 +5,24 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatixisWebChatUI", "NatixisWebChatUI\NatixisWebChatUI.csproj", "{8D8C21DE-B3FF-404A-BCFE-3CEA2EF0C0E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatixisWebChatTests", "NatixisWebChatTests\NatixisWebChatTests.csproj", "{B90FAD42-8FF1-443E-9814-E5506DE383DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatixisWebChatDomain", "NatixisWebChatDomain\NatixisWebChatDomain.csproj", "{C38BB68C-75AA-4DE5-860D-974DEE4E1B1D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "001 - Presentation", "001 - Presentation", "{DB890DE9-7A81-4CD7-9783-1C98C15A4012}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "002 - Domain", "002 - Domain", "{7B2AA8F4-9899-47A3-B527-40117DFEF540}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatixisWebChatInfrastructure", "NatixisWebChatInfrastructure\NatixisWebChatInfrastructure.csproj", "{8F750662-4ECE-4783-8D2D-ABF86976BF45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "003 - Infrastructure", "003 - Infrastructure", "{8AA78BAC-87A4-4D24-8F18-2CD5D6F1FC9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NatixisWebChatModels", "NatixisWebChatModels\NatixisWebChatModels.csproj", "{FD28D32A-AE31-450E-813F-5B2DF9A05FFA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "004 - Models", "004 - Models", "{999C7B4C-A1BA-4C55-A8A5-D6520C96263D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "005 - Tests", "005 - Tests", "{8903D811-D964-4EF4-A228-C5F05BF101DC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +33,32 @@ Global
 		{8D8C21DE-B3FF-404A-BCFE-3CEA2EF0C0E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8D8C21DE-B3FF-404A-BCFE-3CEA2EF0C0E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8D8C21DE-B3FF-404A-BCFE-3CEA2EF0C0E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B90FAD42-8FF1-443E-9814-E5506DE383DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B90FAD42-8FF1-443E-9814-E5506DE383DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B90FAD42-8FF1-443E-9814-E5506DE383DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B90FAD42-8FF1-443E-9814-E5506DE383DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C38BB68C-75AA-4DE5-860D-974DEE4E1B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C38BB68C-75AA-4DE5-860D-974DEE4E1B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C38BB68C-75AA-4DE5-860D-974DEE4E1B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C38BB68C-75AA-4DE5-860D-974DEE4E1B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F750662-4ECE-4783-8D2D-ABF86976BF45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F750662-4ECE-4783-8D2D-ABF86976BF45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F750662-4ECE-4783-8D2D-ABF86976BF45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F750662-4ECE-4783-8D2D-ABF86976BF45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD28D32A-AE31-450E-813F-5B2DF9A05FFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD28D32A-AE31-450E-813F-5B2DF9A05FFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD28D32A-AE31-450E-813F-5B2DF9A05FFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD28D32A-AE31-450E-813F-5B2DF9A05FFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8D8C21DE-B3FF-404A-BCFE-3CEA2EF0C0E6} = {DB890DE9-7A81-4CD7-9783-1C98C15A4012}
+		{B90FAD42-8FF1-443E-9814-E5506DE383DD} = {8903D811-D964-4EF4-A228-C5F05BF101DC}
+		{C38BB68C-75AA-4DE5-860D-974DEE4E1B1D} = {7B2AA8F4-9899-47A3-B527-40117DFEF540}
+		{8F750662-4ECE-4783-8D2D-ABF86976BF45} = {8AA78BAC-87A4-4D24-8F18-2CD5D6F1FC9D}
+		{FD28D32A-AE31-450E-813F-5B2DF9A05FFA} = {999C7B4C-A1BA-4C55-A8A5-D6520C96263D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BF77A3CA-D317-4B5F-949C-443963A2A3D6}
