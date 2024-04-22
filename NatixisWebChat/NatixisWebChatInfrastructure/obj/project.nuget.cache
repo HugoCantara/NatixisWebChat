@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "Sc5EPzbRHQmB+pTc0TTdlQNGyBrKLc2n4xpqpm97Xp83Rln9+aYAyJ7GwpmBHYRJbklTrFJwJGlXgoCyBi1vBQ==",
+  "dgSpecHash": "ijrG0XSrzpAl2EOgLn3WYzj0vhosWV7XE3TMH0xPtgdpCd1l+WEAqYrvEzdFY1kjLnvN5+kqt5rSig98njh0MQ==",
   "success": true,
   "projectFilePath": "D:\\003 - Projectos\\NatixisWebChat\\NatixisWebChat\\NatixisWebChatInfrastructure\\NatixisWebChatInfrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Hugo Cântara\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\Hugo Cântara\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\Hugo Cântara\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\Hugo Cântara\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Hugo Cântara\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Hugo Cântara\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

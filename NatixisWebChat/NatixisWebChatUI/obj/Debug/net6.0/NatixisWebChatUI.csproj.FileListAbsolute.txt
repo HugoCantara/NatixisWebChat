@@ -89,3 +89,4 @@ D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatUI\obj\Debug\net6
 D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatUI\bin\Debug\net6.0\AutoMapper.dll
 D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatUI\bin\Debug\net6.0\NatixisWebChatModels.dll
 D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatUI\bin\Debug\net6.0\NatixisWebChatModels.pdb
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatUI\bin\Debug\net6.0\BCrypt.Net-Next.dll

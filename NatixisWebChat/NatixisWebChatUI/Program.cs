@@ -1,9 +1,17 @@
 using NatixisWebChatInfrastructure.Context;
+using NatixisWebChatInfrastructure.Repositories;
+using NatixisWebChatInfrastructure.Repositories.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+builder.Services.AddScoped<IBaseRepository, BaseRepository>();
+builder.Services.AddScoped<IUsersRepository, UsersRepository>();
+builder.Services.AddScoped<IGroupsRepository, GroupsRepository>();
 
 builder.Services.AddDbContext<NatixisDbContext>();
 
