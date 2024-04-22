@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "NatixisWebChatModels/1.0.0": {
+        "runtime": {
+          "NatixisWebChatModels.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NatixisWebChatModels/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

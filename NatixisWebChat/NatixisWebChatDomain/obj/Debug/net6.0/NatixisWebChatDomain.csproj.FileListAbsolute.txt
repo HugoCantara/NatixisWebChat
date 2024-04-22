@@ -1,0 +1,12 @@
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\bin\Debug\net6.0\NatixisWebChatDomain.deps.json
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\bin\Debug\net6.0\NatixisWebChatDomain.dll
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\bin\Debug\net6.0\NatixisWebChatDomain.pdb
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\obj\Debug\net6.0\NatixisWebChatDomain.csproj.AssemblyReference.cache
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\obj\Debug\net6.0\NatixisWebChatDomain.GeneratedMSBuildEditorConfig.editorconfig
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\obj\Debug\net6.0\NatixisWebChatDomain.AssemblyInfoInputs.cache
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\obj\Debug\net6.0\NatixisWebChatDomain.AssemblyInfo.cs
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\obj\Debug\net6.0\NatixisWebChatDomain.csproj.CoreCompileInputs.cache
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\obj\Debug\net6.0\NatixisWebChatDomain.dll
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\obj\Debug\net6.0\refint\NatixisWebChatDomain.dll
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\obj\Debug\net6.0\NatixisWebChatDomain.pdb
+D:\003 - Projectos\NatixisWebChat\NatixisWebChat\NatixisWebChatDomain\obj\Debug\net6.0\ref\NatixisWebChatDomain.dll

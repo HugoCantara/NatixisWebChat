@@ -1,7 +1,11 @@
+using NatixisWebChatInfrastructure.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<NatixisDbContext>();
 
 var app = builder.Build();
 
