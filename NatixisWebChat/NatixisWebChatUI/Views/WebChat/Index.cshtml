@@ -8,46 +8,61 @@
 }
 
 <div class="chat-main">
-    <h1 style="text-align:center;">Chat Page</h1>
-    <h4 class="chat-header" id="chat-intro" style="text-align:center;"></h4>
+    <h1 class="titleIndexWebChatView">WEBCHAT PAGE</h1>
+    
+    <h4 class="chat-header" id="chat-intro" style="text-align:center; color:white;"></h4>
 
-    <div class="message-box">
+    <div class="message-box" style="text-align:center; color:white;">
         <ul id="messagesList"></ul>
     </div>
 
     <div class="chat-input">
-        <textarea id="messageInput" placeholder="Your text here..."></textarea>
-        <button id="sendButton" style="font-weight: bold"> Send <i class="fa fa-paper-plane fa-x "></i></button>
+        <textarea id="messageInput" placeholder="YOUR TEXT HERE..."></textarea>
+        <button id="sendButton" style="font-weight: bold"> 
+            SEND 
+            <i class="fa fa-paper-plane fa-x "></i>
+        </button>
     </div>
 </div>
 
 <div id="mySidenavUsers" class="sidenavRight">
-    <p style="text-align:center;font-weight: bold;color:white;">Users Online</p>
+    <p class="sidebarIndexWebChatView">USERS ONLINE</p>
     <div class="row text-center">
         <ul id="userOnlineList"></ul>
     </div>
 </div>
 
-<div class="groups-main">
-        <div id="mySidenavGroups" class="sidenavLeft">
-        <p style="text-align:center;font-weight: bold;color:white;">Group Chat Rooms</p>
-        <button id="backToMain" class="btn btn-warning btn-lg" onclick="location.href='@Url.Action("Index", "WebChat")'">Main Chat</button>
+<div class="groups-main">    
+    <div id="mySidenavGroups" class="sidenavLeft">
+        
+        <p style="text-align:center;font-weight: bold;color:white;">GROUP CHAT ROOMS</p>
+        
+        <button id="backToMain" class="btn btn-warning btn-lg" onclick="location.href='@Url.Action("Index", "WebChat")'">MAIN CHAT</button>
+        
         <div>
             <div class="text-center">
                 <h6 id="groupError"></h6>
             </div>
             <div class="form-group">
-                <label style="color:white;">Enter new room name</label>
+                <label style="color:white;">
+                    ENTER NEW ROOM NAME    
+                </label>
                 <input id="GroupChatName" name="groupName" class="form-control" />
             </div>
             <div class="form-group">
-                <input type="button" id="joinGroupButton" style="font-weight: 500;background-color:aliceblue" value="Add new" />
+                <input type="button" id="joinGroupButton" style="font-weight: 500;background-color:aliceblue" value="ADD NEW" />
             </div>
         </div>
-        <p style="text-align:center;font-weight: bold;color:white">Chat Rooms Online</p>
+
+        <p style="text-align:center;font-weight: bold;color:white">
+            CHAT ROOMS ONLINE    
+        </p>
+        
         <div id="groupOnlineList" class="row text-center">
             <ul id="groupList"></ul>
         </div>
+
     </div>
 </div>
+
 <div class="footer navbar-fixed-bottom"></div>

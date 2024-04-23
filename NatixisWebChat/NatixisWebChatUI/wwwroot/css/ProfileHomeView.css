@@ -1,0 +1,13 @@
+﻿/* PROFILE HOME VIEW */
+
+.titleProfileView {
+    color: white;
+}
+
+.divMessageProfileView {
+    color: green;
+}
+
+.labelProfileView, .dataProfileView {
+    color: white;
+}

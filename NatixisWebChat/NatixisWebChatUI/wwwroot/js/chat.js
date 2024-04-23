@@ -41,7 +41,7 @@ function addOnlineUserNames(user) {
         }
         document.getElementById("groupError").innerHTML = "";
         // change header to see with whom you chat
-        document.getElementById("chat-intro").innerHTML = `Private Chat with ${user.name}`;
+        document.getElementById("chat-intro").innerHTML = `PRIVATE CHAT WITH ${user.name}`;
         // allow to send messages and chat
         document.getElementById("sendButton").disabled = false;
         // reset button color
@@ -188,7 +188,7 @@ document.getElementById("joinGroupButton").addEventListener("click", function (e
 
 connection.on("AddCreatorToGroup", function (user, groupName) {
     // change header to see with whom you chat
-    document.getElementById("chat-intro").innerHTML = `You are now chatting in ${groupName} room`;
+    document.getElementById("chat-intro").innerHTML = `YOU ARE NOW CHATTING IN ${groupName} ROOM`;
     // allow to send messages and chat
     document.getElementById("sendButton").disabled = false;
     // user leave group chat
@@ -209,7 +209,7 @@ connection.on("AddCreatorToGroup", function (user, groupName) {
 
 connection.on("AddToMainChat", function (user, groupName) {
     // change header to see with whom you chat
-    document.getElementById("chat-intro").innerHTML = `You are now chatting in General Chat`;
+    document.getElementById("chat-intro").innerHTML = `YOU ARE NOW CHATTING IN GENERAL CHAT`;
     // allow to send messages and chat
     document.getElementById("sendButton").disabled = false;
     // user leave group chat
@@ -252,7 +252,7 @@ function addOnlineGroupNames(group) {
         }
         document.getElementById("groupError").innerHTML = "";
         // change header to see with whom you chat
-        document.getElementById("chat-intro").innerHTML = `You are now chatting in ${group} room`;
+        document.getElementById("chat-intro").innerHTML = `YOU ARE NOW CHATTING IN ${group} ROOM`;
         // allow to send messages and chat
         document.getElementById("sendButton").disabled = false;
         // user leave group chat

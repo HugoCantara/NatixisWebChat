@@ -7,30 +7,27 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">User Profile</h1>
+    <h1 class="display-4 titleProfileView">USER PROFILE</h1>
 </div>
-
+<br />    
+<br />
 <div class="text-center">
-    <h6 style="color: green"><b>@message</b></h6> 
+    <h6 class="divMessageProfileView">
+        <b>@message</b>    
+    </h6> 
 </div>
-
-<div class="row">
-    <h4>User</h4>
-        <dl class="row">
-            <dt class = "col-sm-2">
-                        @Html.DisplayNameFor(model => model.Username)
-            </dt>
-            <dd class = "col-sm-10">
-                        @Html.DisplayFor(model => model.Username)
-            </dd>
-            <dt class = "col-sm-2">
-                        @Html.DisplayNameFor(model => model.Email)
-            </dt>
-            <dd class = "col-sm-10">
-                        @Html.DisplayFor(model => model.Email)
-            </dd>
-        </dl>
+<br />    
+<br />
+<div class="row">  
+    <dl class="row">    
+        <dt class="col-sm-2 labelProfileView">@Html.DisplayNameFor(model => model.Username)</dt>    
+        <dd class="col-sm-10 dataProfileView">@Html.DisplayFor(model => model.Username)</dd>    
+        <dt class="col-sm-2 labelProfileView">@Html.DisplayNameFor(model => model.Email)</dt>    
+        <dd class="col-sm-10 dataProfileView">@Html.DisplayFor(model => model.Email)</dd>    
+    </dl>
+    <br />
+    <br />
     <div class="footer-links">
-            @Html.ActionLink("Change Password", "ResetPassword")
+            @Html.ActionLink("CHANGE PASSWORD", "ResetPassword")
     </div>
 </div>
