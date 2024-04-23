@@ -7,7 +7,6 @@
     using Microsoft.AspNetCore.Mvc;
     using NatixisWebChatDomain.AppConstants;
     using NatixisWebChatDomain.AppEntities;
-    using NatixisWebChatInfrastructure.Repositories.Interfaces;
     using NatixisWebChatInfrastructure.Services;
     using NatixisWebChatModels.AppModels;
     using NatixisWebChatUI.ViewsModel;
@@ -16,22 +15,31 @@
 
     public class HomeController : Controller
     {
+        /// <summary>The logger</summary>
         private readonly ILogger<HomeController> _logger;
+
+        /// <summary>The user services</summary>
+        private readonly UserServices _userServices;
+
+        /// <summary>The password services</summary>
         private readonly PasswordServices _passwordServices;
+
+        /// <summary>The authentication services</summary>
         private readonly AuthenticationServices _authenticationServices;
+
+        /// <summary>The mapper</summary>
         private readonly IMapper _mapper;
-        private readonly IUsersRepository _usersRepository;
 
         /// <summary>The constructor</summary>
         /// <param name="logger">The logger</param>
-        /// <param name="usersRepository">The user repository</param>
+        /// <param name="userServices">The user services</param>
         /// <param name="passwordServices">The password services</param>
         /// <param name="authenticationServices">The authentication services</param>
         /// <param name="map">The mapper</param>
-        public HomeController(ILogger<HomeController> logger, IUsersRepository usersRepository, PasswordServices passwordServices, AuthenticationServices authenticationServices, IMapper map)
+        public HomeController(ILogger<HomeController> logger, UserServices userServices, PasswordServices passwordServices, AuthenticationServices authenticationServices, IMapper map)
         {
             _logger = logger;
-            _usersRepository = usersRepository;
+            _userServices = userServices;
             _passwordServices = passwordServices;
             _authenticationServices = authenticationServices;
             _mapper = map;
@@ -103,7 +111,7 @@
             {
                 //check if user with username exists
                 var mappedUser = _mapper.Map<UsersModel, UserEntity>(userModel);
-                var foundUserByUsername = _usersRepository.GetUserByUsername(mappedUser.Username);
+                var foundUserByUsername = _userServices.GetUserByUsername(mappedUser.Username);
                 if (foundUserByUsername != null)
                 {
                     ViewBag.error = "User with this name already exists";
@@ -113,7 +121,7 @@
                 {
                     //adding new user to db
                     var newUser = _mapper.Map<UsersModel, UserEntity>(userModel);
-                    _usersRepository.AddUser(newUser);
+                    _userServices.AddUser(newUser);
                     ModelState.Clear();
                     TempData["SuccessfulRegister"] = "Person successfully created";
                     return RedirectToAction(ActionsConsts.IndexAction);

@@ -1,25 +1,17 @@
 ﻿namespace NatixisWebChatInfrastructure.Repositories.Interfaces
 {
     /// <summary>Interface IBaseRepository</summary>
-    public interface IBaseRepository
+    /// <typeparam name="T">Generic class</typeparam>
+    public interface IBaseRepository<T> where T : class
     {
-        /// <summary>Add method</summary>
-        /// <typeparam name="T">The generic class.</typeparam>
-        /// <param name="entity">The entity.</param>
-        public void Add<T>(T entity) where T : class;
+        Task<IEnumerable<T>> GetAllAsync();
 
-        /// <summary>Update method</summary>
-        /// <typeparam name="T">The generic class.</typeparam>
-        /// <param name="entity">The entity.</param>
-        public void Update<T>(T entity) where T : class;
+        Task<T> GetByIdAsync(int id);
 
-        /// <summary>Delete method</summary>
-        /// <typeparam name="T">The generic class.</typeparam>
-        /// <param name="entity">The entity.</param>
-        public void Delete<T>(T entity) where T : class;
+        Task<T> AddAsync(T entity);
 
-        /// <summary>Save changes method</summary>
-        /// <returns>bool</returns>
-        bool SaveChanges();
+        Task UpdateAsync(T entity);
+
+        Task DeleteAsync(T entity);
     }
 }

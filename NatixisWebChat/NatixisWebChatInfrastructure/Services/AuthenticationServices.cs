@@ -9,14 +9,18 @@
 
     public class AuthenticationServices
     {
-        /// <summary>The users repository</summary>
-        private readonly IUsersRepository _usersRepository;
+        /// <summary>The generic repository</summary>
+        private readonly IBaseRepository<UserEntity> _userEntityRepository;
+
+        /// <summary>The user services</summary>
+        private readonly UserServices _userServices;
 
         /// <summary>The constructor</summary>
-        /// <param name="usersRepository">The users repository.</param>
-        public AuthenticationServices(IUsersRepository usersRepository)
+        /// <param name="userEntityRepository">The generic repository</param>
+        public AuthenticationServices(IBaseRepository<UserEntity> userEntityRepository, UserServices userServices)
         {
-            _usersRepository = usersRepository;
+            _userEntityRepository = userEntityRepository;
+            _userServices = userServices;
         }
 
         /// <summary>Check if user with such username & password exists and return user</summary>
@@ -24,7 +28,8 @@
         /// <returns>UserEntity?</returns>
         public UserEntity? GetValidUser(UserEntity user)
         {
-            return _usersRepository.GetUserCollection().FirstOrDefault(u => u.Username == user.Username && BCrypt.Net.BCrypt.Verify(user.Password, u.Password));
+            var userCollection = _userEntityRepository.GetAllAsync().Result.ToList();
+            return userCollection.FirstOrDefault(u => u.Username == user.Username && BCrypt.Net.BCrypt.Verify(user.Password, u.Password));
         }
 
         /// <summary>Method to get user that is authenticated by id stored in claims</summary>
@@ -42,7 +47,7 @@
                 return null;
             }
 
-            return _usersRepository.GetUserById(userId);
+            return _userServices.GetUserById(userId);
         }
 
         /// <summary>Method to sign in user, asign claims</summary>

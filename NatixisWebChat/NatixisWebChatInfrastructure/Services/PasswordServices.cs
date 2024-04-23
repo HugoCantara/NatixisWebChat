@@ -1,20 +1,19 @@
 ﻿namespace NatixisWebChatInfrastructure.Services
 {
     using NatixisWebChatDomain.AppEntities;
-    using NatixisWebChatInfrastructure.Repositories.Interfaces;
     using System.Text.RegularExpressions;
 
     /// <summary>Class PasswordServices</summary>
     public class PasswordServices
     {
-        /// <summary>The users repository</summary>
-        private readonly IUsersRepository _usersRepository;
+        /// <summary>The user services</summary>
+        private readonly UserServices _userServices;
 
         /// <summary>The constructor</summary>
         /// <param name="usersRepository">The users repository.</param>
-        public PasswordServices(IUsersRepository usersRepository)
+        public PasswordServices(UserServices userServices)
         {
-            _usersRepository = usersRepository;
+            _userServices = userServices;
         }
 
         /// <summary>Update user password</summary>
@@ -24,7 +23,7 @@
         public UserEntity UpdateUserPassword(UserEntity user, string newPassword)
         {
             user.Password = BCrypt.Net.BCrypt.HashPassword(newPassword);
-            return _usersRepository.UpdateUserPassword(user);
+            return _userServices.UpdateUserPassword(user);
         }
 
         /// <summary>Update user password by email</summary>
@@ -33,8 +32,8 @@
         /// <returns>UserEntity?</returns>
         public UserEntity? UpdateUserPasswordByEmail(UserEntity user, string newPassword)
         {
-            var databaseUser = _usersRepository.GetUserCollection().FirstOrDefault(u => u.Username == user.Username && u.Email == user.Email);
-
+            var databaseUser = _userServices.GetUserByUsernameAndEmail(user);
+            
             if (databaseUser == null)
             {
                 return null;

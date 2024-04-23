@@ -14,13 +14,13 @@ builder.Services.AddSignalR();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-builder.Services.AddScoped<IBaseRepository, BaseRepository>();
-builder.Services.AddScoped<IUsersRepository, UsersRepository>();
-builder.Services.AddScoped<IGroupsRepository, GroupsRepository>();
+builder.Services.AddDbContext<NatixisDbContext>();
+
+builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+builder.Services.AddScoped<UserServices>();
+builder.Services.AddScoped<GroupServices>();
 builder.Services.AddScoped<PasswordServices>();
 builder.Services.AddScoped<AuthenticationServices>();
-
-builder.Services.AddDbContext<NatixisDbContext>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>

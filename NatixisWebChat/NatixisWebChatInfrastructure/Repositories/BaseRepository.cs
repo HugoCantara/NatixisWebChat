@@ -1,11 +1,16 @@
 ﻿namespace NatixisWebChatInfrastructure.Repositories
 {
+    using Microsoft.EntityFrameworkCore;
     using NatixisWebChatInfrastructure.Context;
     using NatixisWebChatInfrastructure.Repositories.Interfaces;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
 
-    /// <summary>Class BaseRepository</summary>
-    public class BaseRepository : IBaseRepository
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
+        /// <summary>The database set</summary>
+        protected readonly DbSet<T> _dbSet;
+
         /// <summary>The context</summary>
         private readonly NatixisDbContext _context;
 
@@ -13,39 +18,38 @@
         /// <param name="context">The context</param>
         public BaseRepository(NatixisDbContext context)
         {
+            _dbSet = context.Set<T>();
             _context = context;
         }
 
-        /// <summary>Add method</summary>
-        /// <typeparam name="T">The generic class.</typeparam>
-        /// <param name="entity">The entity.</param>
-        public void Add<T>(T entity) where T : class
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            throw new NotImplementedException();
+            return await _dbSet.ToListAsync();
         }
 
-        /// <summary>Update method</summary>
-        /// <typeparam name="T">The generic class.</typeparam>
-        /// <param name="entity">The entity.</param>
-        public void Update<T>(T entity) where T : class
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _dbSet.FindAsync(id);
         }
 
-        /// <summary>Delete method</summary>
-        /// <typeparam name="T">The generic class.</typeparam>
-        /// <param name="entity">The entity.</param>
-        public void Delete<T>(T entity) where T : class
+        public async Task<T> AddAsync(T entity)
         {
-            throw new NotImplementedException();
+            await _dbSet.AddAsync(entity);
+            await _context.SaveChangesAsync();
+            return entity;
         }
 
-        /// <summary>Save changes method</summary>
-        /// <returns>bool</returns>
-        public bool SaveChanges()
+        public async Task UpdateAsync(T entity)
         {
-            _context.SaveChanges();
-            return true;
-        }     
+            _dbSet.Attach(entity);
+            _context.Entry(entity).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(T entity)
+        {
+            _dbSet.Remove(entity);
+            await _context.SaveChangesAsync();
+        }   
     }
 }
