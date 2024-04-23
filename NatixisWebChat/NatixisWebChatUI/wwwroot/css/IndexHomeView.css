@@ -1,0 +1,21 @@
+﻿/* INDEX HOME VIEW */
+
+.titleIndexView {
+    color: white;
+}
+
+.subTitleIndexView {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
+
+.boxTitleIndexView {
+    text-align: center;
+    font-weight: bold;
+}
+
+.borderBoxIndexView {
+    border-style: solid !important;
+    border-color: white !important;
+}

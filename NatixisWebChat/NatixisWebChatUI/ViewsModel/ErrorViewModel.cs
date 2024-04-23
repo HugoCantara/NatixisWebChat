@@ -1,4 +1,4 @@
-namespace NatixisWebChatUI.Models
+namespace NatixisWebChatUI.ViewsModel
 {
     public class ErrorViewModel
     {

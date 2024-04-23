@@ -48,7 +48,7 @@
         /// <summary>Method to sign in user, asign claims</summary>
         /// <param name="user">The user.</param>
         /// <param name="context">The Http context.</param>
-        public static async Task CreateAuthentication(UserEntity user, HttpContext context)
+        public async Task CreateAuthentication(UserEntity user, HttpContext context)
         {
             var claimCollection = new List<Claim>
             {

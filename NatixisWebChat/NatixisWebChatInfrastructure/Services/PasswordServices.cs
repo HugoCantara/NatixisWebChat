@@ -45,7 +45,7 @@
 
         /// <summary>Method that generates random secure password</summary>
         /// <returns>string</returns>
-        public static string GenerateNewPassword()
+        public string GenerateNewPassword()
         {
             var randomString = "";
             Random random = new Random();
@@ -85,7 +85,7 @@
         /// </summary>
         /// <param name="password">The password</param>
         /// <returns></returns>
-        public static bool IsSecurePassword(string password)
+        public bool IsSecurePassword(string password)
         {
             //regex check that password should have at least one lowercase, 
             //uppercase letter, digit and special character and it is not less than 8 char
