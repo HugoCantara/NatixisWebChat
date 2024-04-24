@@ -2,6 +2,7 @@
 {
     using NatixisWebChatDomain.AppEntities;
     using NatixisWebChatInfrastructure.Repositories.Interfaces;
+    using System.Security.Claims;
 
     public class UserServices
     {
@@ -61,6 +62,24 @@
         {
             _userEntityRepository.UpdateAsync(user);
             return user;
+        }
+
+        /// <summary>Method to get user that is authenticated by id stored in claims</summary>
+        /// <param name="principal">The principal claims.</param>
+        /// <returns>UserEntity?</returns>
+        public UserEntity? GetUserByClaim(ClaimsPrincipal principal)
+        {
+            int userId;
+
+            //get user claim(by id)
+            var userClaim = principal.Claims.Where(c => c.Type == ClaimTypes.NameIdentifier).Select(c => c.Value).SingleOrDefault();
+
+            if (!Int32.TryParse(userClaim, out userId))
+            {
+                return null;
+            }
+
+            return this.GetUserById(userId);
         }
     }
 }

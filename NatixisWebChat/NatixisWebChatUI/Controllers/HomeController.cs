@@ -192,7 +192,7 @@
         [Authorize]
         public IActionResult Profile()
         {
-            var user = _authenticationServices.GetUserByClaim(User);
+            var user = _userServices.GetUserByClaim(User);
             if (user == null)
             {
                 ViewBag.error = "Please Logout. Account Error.";
@@ -246,19 +246,19 @@
             }
 
             // get current user by claim
-            UserEntity? user = _authenticationServices.GetUserByClaim(User);
+            UserEntity? user = _userServices.GetUserByClaim(User);
             if (user == null)
             {
                 ViewBag.error = "Please Logout. Account Error.";
                 return View();
             }
 
-            //// check if old password match user password
-            //if (!BCrypt.Net.BCrypt.Verify(oldPswd, user.Password))
-            //{
-            //    ViewBag.error = "Wrong Password. Don't remember password? Choose Forget Password option.";
-            //    return View();
-            //}
+            // check if old password match user password
+            if (!BCrypt.Net.BCrypt.Verify(oldPswd, user.Password))
+            {
+                ViewBag.error = "Wrong Password. Don't remember password? Choose Forget Password option.";
+                return View();
+            }
 
             // update password and redirect
             _passwordServices.UpdateUserPassword(user, new1Pswd);
